@@ -50,6 +50,7 @@ extern "C" {
     pub fn SDL_QuitSubSystem(flags: SDL_InitFlag);
     pub fn SDL_WasInit(flags: SDL_InitFlag) -> SDL_InitFlag;
     pub fn SDL_Quit();
+    pub fn SDL_SetMainReady();
 
     //SDL_timer.h
     pub fn SDL_GetTicks() -> uint32_t;

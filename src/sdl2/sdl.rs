@@ -119,6 +119,13 @@ impl InitBuilder {
         }
     }
 
+    /// Calls SDL_SetMainReady which is usually called by the real SDL main function to let the rest of the
+    /// library know that initialization was done properly.
+    pub unsafe fn set_main_ready(&mut self) -> &mut InitBuilder {
+        ll::SDL_SetMainReady();
+        self
+    }
+
     /// Builds the SDL2 context. Convenience method for `.build().unwrap()`.
     ///
     /// Panics if there was an error initializing SDL2.
